@@ -1,4 +1,6 @@
 import { useFormik } from "formik";
+import axios from "axios"
+import "./BasicFormik.css"
 import React from "react";
 import { SignupSchema } from "../schemas";
 ;
@@ -6,8 +8,8 @@ import { SignupSchema } from "../schemas";
 const initialValues = {
   name: "",
   email: "",
-  password: "",
-  confirm_password: "",
+  mobile: "",
+  
 };
 
 const ReactFormik = () => {
@@ -17,6 +19,7 @@ const ReactFormik = () => {
     onSubmit: (values,action) => {
       console.log("clicked")
       console.log("formik property", values);
+      SbiRegdata(values)
       action.resetForm()
     },
     
@@ -25,9 +28,21 @@ const ReactFormik = () => {
   );
   console.log("formik property",errors);
 
+  const SbiRegdata = (payload) => {
+    axios
+    .post("http://localhost:8080/Sbiform", payload)
+    .then((response) => {
+      console.log("response", response.data);
+    })
+    .catch((error) => {
+      return error;
+    });
+  }
+
+
   // console.log("Formik", values);
   return (
-    <div>
+    <div className="sbidiv">
       <h2>React Formik</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-block">
@@ -65,38 +80,23 @@ const ReactFormik = () => {
          
         </div>
         <div className="input-block">
-          <label htmlFor="password" className="input-label">
-            Password
+          <label htmlFor="mobile" className="input-label">
+           Mobile
           </label>
           <input
-            type="password"
+            type="tel"
+            maxLength={10}
             autoComplete="off"
-            name="password"
-            id="password"
-            placeholder="password"
-            value={values.password}
+            name="mobile"
+            id="mobile"
+            placeholder="Mobile"
+            value={values.mobile}
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {errors.password && touched.password ? ( <p className="form-error">{errors.password}</p>):null}
+          {errors.mobile && touched.mobile ? ( <p className="form-error">{errors.mobile}</p>):null}
         </div>
-        <div className="input-block">
-          <label htmlFor="confirm_password" className="input-label">
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            autoComplete="off"
-            name="confirm_password"
-            id="confirm_password"
-            placeholder="confirm_password"
-            value={values.confirm_password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.confirm_password && touched.confirm_password ? ( <p className="form-error">{errors.confirm_password}</p>):null}
- 
-        </div>
+
         <div className="modal-buttons">
           {/* <a href="#" className=''>Want To Regsiter using Gmail</a> */}
           <button className="input-button" type="submit" value="submit">
