@@ -57,19 +57,19 @@ const GradingSystemReact = () => {
       var gra = "your grade A";
       SetGrade(gra);
     } else if (average >= 75 && average <= 80) {
-      var gra = "your grade A";
+     gra = "your grade A";
       SetGrade(gra);
     } else if (average >= 70 && average <= 75) {
-      var gra = "your grade B";
+       gra = "your grade B";
       SetGrade(gra);
     } else if (average >= 65 && average <= 70) {
-      var gra = "your grade C+";
+       gra = "your grade C+";
       SetGrade(gra);
     } else if (average >= 60 && average <= 65) {
-      var gra = "your grade C";
+       gra = "your grade C";
       SetGrade(gra);
     } else if (average >= 50 && average <= 60) {
-      var gra = "your grade D";
+       gra = "your grade D";
       SetGrade(gra);
     } else {
       var gra = "your grade F";
