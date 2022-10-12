@@ -1,0 +1,43 @@
+.file-card{
+    background-color: #edf2f7;
+    border : 3px dashed #cbd5e0;
+    padding: 1em;
+    min-width: 380px;
+    min-height:230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.file-inputs{
+ position:relative;
+ margin-bottom:1.5em;       
+}
+
+input {
+    position: relative;
+    max-width: 200px;
+    height : 46px;
+    z-index:2
+}
+
+.button:active {
+    background-color: orangered;
+   
+}
+
+
+.button{
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50px;
+    width: 150px;
+    background-color: rgb(17, 17, 20);
+    color: gold;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}

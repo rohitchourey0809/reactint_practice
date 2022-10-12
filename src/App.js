@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Basic from "./component/BasicFormik/Formik";
+import UploadComp from "./component/FileUpload/UploadComp";
 import GradingSystem from "./component/GraddingSystem/GradingSystem";
 import GradingSystemReact from "./component/GraddingSystem/GradingSystemReact";
 import About from "./component/pages/About";
@@ -25,6 +26,7 @@ function App() {
       <Route path= "/gradingreact" exact element={<GradingSystemReact/>}/>
       <Route path= "/cardvalue" exact element={<Quantity/>}/>
       <Route path= "/basic" exact element={<Basic/>}/>
+      <Route path="/fileupload" exact element={<UploadComp/>}/>
 
       </Routes>
      </div>
