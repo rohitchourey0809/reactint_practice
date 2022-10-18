@@ -1,5 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import {AdvancedForm} from "./component/BasicAdvanedformByformik/AdvancedForm";
+import BasicForm from "./component/BasicAdvanedformByformik/BasicForm";
+import FormikForm from "./component/BasicAdvanedformByformik/FormikForm";
 import Basic from "./component/BasicFormik/Formik";
 import UploadComp from "./component/FileUpload/UploadComp";
 import GradingSystem from "./component/GraddingSystem/GradingSystem";
@@ -27,6 +30,9 @@ function App() {
       <Route path= "/cardvalue" exact element={<Quantity/>}/>
       <Route path= "/basic" exact element={<Basic/>}/>
       <Route path="/fileupload" exact element={<UploadComp/>}/>
+      <Route path="/newformikform" exact element={<FormikForm/>}/>
+      <Route path="/basicform" exact element={<BasicForm/>}/>
+      <Route path="/advancedform" exact element={<AdvancedForm/>}/>
 
       </Routes>
      </div>
