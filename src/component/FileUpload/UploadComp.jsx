@@ -8,8 +8,8 @@ const UploadComp = () => {
         name: "myFile.pdf"
     }])
 
-    const removeFile = (__filename)=>{
-        setFiles(files.filter(file=>file.name !== __filename))
+    const removeFile = (filename)=>{
+        setFiles(files.filter(file=>file.name !== filename))
     }
 
     console.log("UplloadFliles",files)
